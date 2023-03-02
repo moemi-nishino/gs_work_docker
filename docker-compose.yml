@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    volumes:
+      - type: bind
+        source: ./app
+        target: /usr/src/app
+    ports:
+      - "8080:8080"
